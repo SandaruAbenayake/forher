@@ -1,0 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import AskPage from './pages/AskPage'; import ExcitedPage from './pages/ExcitedPage'; import SchedulePage from './pages/SchedulePage'; import FoodPage from './pages/FoodPage'; import ConfirmPage from './pages/ConfirmPage'; import CelebratePage from './pages/CelebratePage';
+export default function App() { const l = useLocation(); return <AnimatePresence mode="wait"><Routes location={l} key={l.pathname}><Route path="/" element={<AskPage/>}/><Route path="/excited" element={<ExcitedPage/>}/><Route path="/schedule" element={<SchedulePage/>}/><Route path="/food" element={<FoodPage/>}/><Route path="/confirm" element={<ConfirmPage/>}/><Route path="/celebrate" element={<CelebratePage/>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes></AnimatePresence>; }
