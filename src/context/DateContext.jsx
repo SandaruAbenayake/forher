@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-const initial = { selectedDate: null, selectedTime: null, selectedFoods: [], currentStep: 1, hasAnsweredYes: false, isConfirmed: false };
+const initial = { visitorName: '', selectedDate: null, selectedTime: null, selectedFoods: [], currentStep: 1, hasAnsweredYes: false, isConfirmed: false };
 const DateContext = createContext();
 export function DateProvider({ children }) {
   const [state, setState] = useState(() => { try { const saved = JSON.parse(localStorage.getItem('best-friend-date')); return saved ? { ...initial, ...saved, selectedDate: saved.selectedDate ? new Date(saved.selectedDate) : null } : initial; } catch { return initial; } });
